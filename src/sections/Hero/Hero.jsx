@@ -60,7 +60,9 @@ function Hero() {
         </p>
         <a href={CV} download>
           <button className="hover">Resume</button>
+          <button style={{marginLeft:'30px'}} className="hover">HireMe</button>
         </a>
+
       </div>
     </section>
   );
