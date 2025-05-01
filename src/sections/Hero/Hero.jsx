@@ -52,7 +52,7 @@ function Hero() {
             <img src={linkedinIcon} alt="Linkedin icon" />
           </a>
         </span>
-        <p className={styles.description} >
+        <p className={styles.description}>
           Aspiring Full Stack Developer passionate about learning and building
           complete web solutions, eager to turn ideas into functional,
           user-friendly applications from front to back.
