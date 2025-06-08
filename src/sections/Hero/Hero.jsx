@@ -13,7 +13,7 @@ import CV from "../../assets/cv.pdf";
 import { useTheme } from "../../common/ThemeContext";
 // import the components
 import Projects from "../Projects/Projects";
-import Skills from '../Skills/Skills';
+import Skills from "../Skills/Skills";
 import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
 
@@ -27,7 +27,11 @@ function Hero() {
 
   return (
     <>
-      <section id="hero" className={styles.container}>
+      <section
+        id="hero"
+        className={styles.container}
+        style={{ marginTop: "-250px" }}
+      >
         <div className={styles.colorModeContainer}>
           <img
             src={heroImg}

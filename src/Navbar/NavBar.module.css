@@ -48,7 +48,9 @@
   left: 0;
   height: 2px;
   width: 0%;
-  background-color: var(--link-hover-color);
+  background-color: var(
+    --hover-underline-color
+  ); /* customized below per theme */
   transition: width 0.3s ease;
 }
 
@@ -56,14 +58,14 @@
   width: 100%;
 }
 
-/* Dot decoration */
+/* Dot on LEFT side */
 .navLink::after {
   content: "•";
   position: absolute;
   top: 50%;
-  right: -12px;
+  left: -15px; /* move dot to the left */
   transform: translateY(-50%);
-  color: var(--link-hover-color);
+  color: var(--hover-dot-color); /* customized below per theme */
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -72,7 +74,7 @@
   opacity: 1;
 }
 
-/* No dot after last item */
+/* Remove dot from last element if needed */
 .navLink:last-child::after {
   display: none;
 }
