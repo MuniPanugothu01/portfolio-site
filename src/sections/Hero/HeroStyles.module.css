@@ -55,21 +55,25 @@
 
 .colorModeContainer {
   position: relative;
- 
 }
 
-.colorMode {
-  position: absolute;
-  right: 0;
-  width: 25px;
-}
+@media (min-width: 595.2px) {
+  .colorModeContainer {
+    align-items: center;
+  }
 
+  .colorMode {
+    position: absolute;
+    right: 0;
+    width: 25px;
+  }
+}
 .colorMode:hover {
   cursor: pointer;
 }
 
 .description {
-  max-width: 30ch;  
+  max-width: 30ch;
 }
 
 .info {
@@ -97,5 +101,52 @@
       max-width: 400px;
       width: 400px;
     }
+  }
+}
+
+/* Small screens - Hero section comes down */
+@media (max-width: 595.1px) {
+  .container {
+    align-items: flex-start;
+    margin-top: 0;
+    padding-top: 2rem;
+  }
+  .description {
+    text-align: left;
+  }
+}
+
+/* Medium screens and up - Original positioning */
+@media (min-width: 595.2px) {
+  .container {
+    align-items: center;
+    margin-top: -600px;
+  }
+  .description {
+    text-align: justify;
+  }
+}
+
+/* Additional small screen optimizations */
+@media (max-width: 480px) {
+  .container {
+    padding-top: 20rem;
+    padding-left: 3.5rem;
+    padding-right: 1rem;
+  }
+  .description {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+  .container {
+    padding-top: 0.5rem;
+  }
+  .description {
+    font-size: 0.85rem;
   }
 }
