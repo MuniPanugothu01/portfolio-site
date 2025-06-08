@@ -5,3 +5,71 @@
     color: var(--footer-text-color);
   }
 }
+
+:root {
+  --footer-text-color: #333; /* You can customize this globally */
+}
+
+.container {
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--footer-text-color); /* inherit natural theme text color */
+}
+
+/* Paragraphs inside footer container */
+.container p {
+  font-size: 16px;
+  color: var(--footer-text-color);
+}
+
+.navLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.link {
+  color: var(--footer-text-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #00bcd4;
+  text-decoration: underline;
+}
+
+.contactInfo {
+  margin-bottom: 1rem;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: var(--footer-text-color);
+  transition: transform 0.3s, color 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  color: #00bcd4;
+}
+
+.rights {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.status {
+  color: red;
+  font-weight: bold;
+}
