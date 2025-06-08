@@ -109,10 +109,10 @@
   .container {
     align-items: flex-start;
     margin-top: 0;
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
   }
   .description {
-    text-align: left;
+    text-align:center ;
   }
 }
 
@@ -120,7 +120,7 @@
 @media (min-width: 595.2px) {
   .container {
     align-items: center;
-    margin-top: -600px;
+    /* margin-top: -10px; */
   }
   .description {
     text-align: justify;

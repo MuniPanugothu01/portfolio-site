@@ -67,9 +67,9 @@ function Hero() {
             </a>
           </span>
           <p className={styles.description}>
-            Aspiring Full Stack Developer passionate about learning and building
-            complete web solutions, eager to turn ideas into functional,
-            user-friendly applications from front to back.
+            Code crafter on a mission — designing and developing full-stack apps
+            that just make sense. Always learning, always building — turning
+            curiosity into clean, functional code.
           </p>
           <a href={CV} download>
             <button className="hover">Resume</button>
