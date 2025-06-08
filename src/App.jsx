@@ -10,12 +10,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      {/* <Hero />
-      <Projects />
-      <Skills />
-      <Contact />
-      <Footer /> */}
-
       <BrowserRouter>
         <NavBar />
         <Routes>
