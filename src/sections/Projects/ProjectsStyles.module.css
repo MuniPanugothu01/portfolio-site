@@ -38,65 +38,6 @@
   }
 }
 
-/* Small screens - Projects section below */
-/* @media (max-width: 595.1px) {
-  .container {
-    
-    margin-top: 100px; 
-  }
-}
-@media (max-width: 1056px) {
-  .container {
-    
-    margin-top: -100px; 
-  }
-} */
-
-/* Small screens - Phones */
-/* @media (max-width: 595px) {
-  .container {
-    margin-top: 100px;
-  }
-} */
-
-/* Medium screens - Tablets and small laptops */
-/* @media (min-width: 596px) and (max-width: 1056px) {
-  .container {
-    margin-top: -350px; 
-  }
-}
-@media (min-width: 1057px) {
-  .container {
-    margin-top: -100px;
-  }
-} */
-
-/* Phones (small screens) */
-/* @media (max-width: 595px) {
-  .container {
-    margin-top: 100px;
-  }
-} */
-
-/* iPad Mini / Tablets (medium screens) */
-/* @media (min-width: 596px) and (max-width: 1056px) {
-  .container {
-    margin-top: -350px;
-  }
-}
-
-@media (min-width: 1057px) {
-  .container {
-    margin-top: -100px;
-  }
-}
-
-@media (max-width: 796.8px) {
-  .container {
-    margin-top: -150px;
-  }
-} */
-
 /* Mobile screens: 0px – 595px */
 @media (max-width: 595px) {
   .container {
