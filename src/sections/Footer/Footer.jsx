@@ -7,31 +7,31 @@ function Footer() {
     <section id="footer" className={styles.container}>
       <nav className={styles.navLinks}>
         <Link to="/" className={styles.link}>
-          Home
+          <span className={styles.tick}>✓</span> Home
         </Link>
         <Link to="/About" className={styles.link}>
-          About
+          <span className={styles.tick}>✓</span> About
         </Link>
         <Link to="/Project" className={styles.link}>
-          Projects
+          <span className={styles.tick}>✓</span> Projects
         </Link>
         <Link to="/Skills" className={styles.link}>
-          Skills
+          <span className={styles.tick}>✓</span> Skills
         </Link>
         <Link to="/Contact" className={styles.link}>
-          Contact
+          <span className={styles.tick}>✓</span> Contact
         </Link>
       </nav>
 
       <div className={styles.contactInfo}>
         <p>
-          Email:{" "}
+          <span className={styles.tick}>✓</span> Email:{" "}
           <a href="mailto:your.email@example.com" className={styles.link}>
             munipanugothu2001@gmail.com
           </a>
         </p>
         <p>
-          Phone:{" "}
+          <span className={styles.tick}>✓</span> Phone:{" "}
           <a href="tel:+1234567890" className={styles.link}>
             +91 9347870616
           </a>
