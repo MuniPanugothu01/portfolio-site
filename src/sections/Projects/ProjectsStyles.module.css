@@ -72,14 +72,14 @@
 } */
 
 /* Phones (small screens) */
-@media (max-width: 595px) {
+/* @media (max-width: 595px) {
   .container {
     margin-top: 100px;
   }
-}
+} */
 
 /* iPad Mini / Tablets (medium screens) */
-@media (min-width: 596px) and (max-width: 1056px) {
+/* @media (min-width: 596px) and (max-width: 1056px) {
   .container {
     margin-top: -350px;
   }
@@ -94,5 +94,26 @@
 @media (max-width: 796.8px) {
   .container {
     margin-top: -150px;
+  }
+} */
+
+/* Mobile screens: 0px – 595px */
+@media (max-width: 595px) {
+  .container {
+    margin-top: 100px;
+  }
+}
+
+/* iPad Mini and small tablets: 596px – 796.8px */
+@media (min-width: 596px) and (max-width: 796.8px) {
+  .container {
+    margin-top: -150px;
+  }
+}
+
+/* Medium to large tablets or laptops: 796.9px – 1056px */
+@media (min-width: 796.9px) and (max-width: 1056px) {
+  .container {
+    margin-top: -380px;
   }
 }
