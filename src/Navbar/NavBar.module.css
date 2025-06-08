@@ -1,0 +1,78 @@
+.navbarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--nav-bg-color);
+  padding: 1rem 2rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logoLink {
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+  text-decoration: none;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Nav Links */
+.navLink {
+  position: relative;
+  color: var(--text-color);
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 6px;
+}
+
+/* Hover style */
+.navLink:hover {
+  color: var(--link-hover-color);
+  background-color: var(--hover-bg);
+}
+
+/* Underline animation */
+.navLink::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background-color: var(--link-hover-color);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::before {
+  width: 100%;
+}
+
+/* Dot decoration */
+.navLink::after {
+  content: "•";
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  transform: translateY(-50%);
+  color: var(--link-hover-color);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navLink:hover::after {
+  opacity: 1;
+}
+
+/* No dot after last item */
+.navLink:last-child::after {
+  display: none;
+}
