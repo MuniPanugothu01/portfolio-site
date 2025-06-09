@@ -10,7 +10,7 @@ function Skills() {
     theme === "light" ? checkMarkIconLight : checkMarkIconDark;
 
   return (
-    <section id="skills" className={styles.container}>
+    <section id="skills" className={styles.container} style={{marginTop:'-50px'}}>
       <h1 className="sectionTitle">Skills</h1>
       <div className={styles.skillList}>
         <SkillList src={checkMarkIcon} skill="HTML" />
