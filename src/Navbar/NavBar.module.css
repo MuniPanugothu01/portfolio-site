@@ -1,23 +1,33 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Navbar Container */
 .navbarContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: all 0.3s ease;
-  background-color: rgba(255, 255, 255, 0.95); 
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); 
+  background-color: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
-/* Logo Section */
+/* Logo */
 .logoLink {
   display: flex;
   align-items: center;
   text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: inherit;
   flex-shrink: 0;
 }
 
@@ -32,9 +42,8 @@
   transform: scale(1.05);
 }
 
-/* Mobile Toggle Button */
+/* Hamburger Button */
 .mobileToggle {
-  display: block;
   background: none;
   border: none;
   cursor: pointer;
@@ -53,21 +62,15 @@
   width: 24px;
   height: 18px;
   justify-content: space-between;
+  color: inherit;
 }
 
 .hamburgerLine {
   width: 100%;
   height: 2px;
-  background-color: var(--text-color, #333333);
+  background-color: currentColor;
   transition: all 0.3s ease;
   transform-origin: center;
-}
-
-/* Dark mode hamburger lines */
-@media (prefers-color-scheme: dark) {
-  .hamburgerLine {
-    background-color: var(--text-color, #ffffff);
-  }
 }
 
 /* Hamburger Animation */
@@ -83,57 +86,39 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Navigation Links Container - NO BACKGROUND */
+/* Nav Links */
 .navLinksContainer {
   display: none;
+  flex-direction: column;
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
   width: 100%;
-  flex-direction: column;
-  padding: 1rem 0;
+  padding: 1rem 2rem;
   z-index: 999;
-  /* Removed background-color, box-shadow, and border-top */
 }
 
 .navLinksContainer.open {
   display: flex;
 }
 
-/* Nav Links */
 .navLink {
   position: relative;
-  color: var(--text-color, #333333);
-  padding: 1rem 1.5rem;
+  color: inherit;
+  padding: 1rem;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: all 0.3s ease;
-  border: none;
   background: none;
+  border: none;
+  transition: all 0.3s ease;
 }
 
-/* Dark mode text color */
-@media (prefers-color-scheme: dark) {
-  .navLink {
-    color: var(--text-color, #ffffff);
-  }
-}
-
-/* Hover Effects - NO BACKGROUND */
 .navLink:hover {
-  color: var(--link-hover-color, #2563eb);
+  color: #2563eb;
   transform: translateX(8px);
 }
 
-/* Dark mode hover color */
-@media (prefers-color-scheme: dark) {
-  .navLink:hover {
-    color: var(--link-hover-color, #60a5fa);
-  }
-}
-
-/* Blue Underline Animation */
 .navLink::before {
   content: "";
   position: absolute;
@@ -142,39 +127,24 @@
   height: 3px;
   width: 0;
   background: linear-gradient(90deg, #2563eb, #3b82f6);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   border-radius: 2px;
-}
-
-/* Dark mode underline */
-@media (prefers-color-scheme: dark) {
-  .navLink::before {
-    background: linear-gradient(90deg, #60a5fa, #93c5fd);
-  }
 }
 
 .navLink:hover::before {
   width: calc(100% - 3rem);
 }
 
-/* Left Side Dot Animation */
 .navLink::after {
   content: "•";
   position: absolute;
   top: 50%;
   left: 0.5rem;
   transform: translateY(-50%);
-  color: var(--hover-dot-color, #2563eb);
+  color: #2563eb;
   font-size: 1.2rem;
   opacity: 0;
   transition: all 0.3s ease;
-}
-
-/* Dark mode dot color */
-@media (prefers-color-scheme: dark) {
-  .navLink::after {
-    color: var(--hover-dot-color, #60a5fa);
-  }
 }
 
 .navLink:hover::after {
@@ -182,7 +152,6 @@
   animation: pulse 1.5s infinite;
 }
 
-/* Pulse animation for the dot */
 @keyframes pulse {
   0%,
   100% {
@@ -195,48 +164,107 @@
   }
 }
 
-/* Active link styles - NO BACKGROUND */
 .navLink.active {
   color: #2563eb;
-}
-
-/* Dark mode active link */
-@media (prefers-color-scheme: dark) {
-  .navLink.active {
-    color: #60a5fa;
-  }
 }
 
 .navLink.active::before {
   width: calc(100% - 3rem);
 }
 
-/* Small Screens - Better mobile optimization */
-@media (max-width: 480px) {
-  .navbarContainer {
-    padding: 0.8rem 1rem;
-    flex-wrap: nowrap;
-  }
+/* Dark Mode Support */
+body[data-theme="dark"] .navbarContainer {
+  background-color: #2f2f2f;
+  color: #ffffff;
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.1);
+}
 
-  .logo {
-    height: 28px;
+body[data-theme="dark"] .navLink {
+  color: #ffffff;
+}
+
+body[data-theme="dark"] .navLink:hover {
+  color: #ffffff;
+}
+
+body[data-theme="dark"] .navLink::before {
+  background: linear-gradient(90deg, #ffffff, #e5e5e5);
+}
+
+body[data-theme="dark"] .navLink::after {
+  color: #ffffff;
+}
+
+body[data-theme="dark"] .navLink.active {
+  color: #ffffff;
+}
+
+/* Force hamburger lines to white in dark mode on mobile */
+@media (max-width: 1024px) {
+  body[data-theme="dark"] .hamburgerLine {
+    background-color: #ffffff;
+  }
+}
+
+/* Focus for accessibility */
+.navLink:focus,
+.mobileToggle:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+  .navbarContainer {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    padding: 1rem 3rem;
+    align-items: center;
   }
 
   .mobileToggle {
-    padding: 0.4rem;
-  }
-
-  .hamburger {
-    width: 20px;
-    height: 16px;
+    display: none;
   }
 
   .navLinksContainer {
-    padding: 0.5rem 0;
-    left: 0;
-    right: 0;
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0;
+    width: auto;
   }
 
+  .navLink {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    margin: 0 0.2rem;
+  }
+
+  .navLink:hover {
+    transform: translateY(-3px);
+  }
+
+  .navLink::before {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+  }
+
+  .navLink:hover::before,
+  .navLink.active::before {
+    width: 80%;
+  }
+
+  .navLink::after {
+    left: 8px;
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
   .navLink {
     padding: 0.8rem 1rem;
     font-size: 0.9rem;
@@ -259,250 +287,16 @@
   }
 }
 
-/* Medium Screens (Tablets) - 481px to 767px */
-@media (min-width: 481px) and (max-width: 767px) {
-  .navbarContainer {
-    padding: 1rem 1.5rem;
-  }
-
-  .logo {
-    height: 32px;
-  }
-
-  .mobileToggle {
-    display: block;
-  }
-
-  .navLinksContainer {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: auto;
-    width: 280px;
-    padding: 0.8rem 0;
-  }
-
-  .navLink {
-    padding: 0.9rem 1.2rem;
-    font-size: 0.95rem;
-  }
-
-  .navLink:hover {
-    transform: translateX(10px);
-  }
-}
-
-/* Medium Screens (Tablets) - 768px to 1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .navbarContainer {
-    padding: 1rem 2rem;
-  }
-
-  .logo {
-    height: 38px;
-  }
-
-  .mobileToggle {
-    display: block;
-  }
-
-  .navLinksContainer {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: auto;
-    width: 320px;
-    padding: 1rem 0;
-  }
-
-  .navLink {
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-  }
-
-  .navLink:hover {
-    transform: translateX(12px);
-  }
-}
-
-/* Large Screens (Desktop) - 1024px and up */
-@media (min-width: 1024px) {
-  .navbarContainer {
-    padding: 1rem 3rem;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 2rem;
-    align-items: center;
-  }
-
-  .logoLink {
-    justify-self: start;
-  }
-
-  .logo {
-    height: 42px;
-  }
-
-  /* Hide mobile toggle on desktop */
-  .mobileToggle {
-    display: none;
-  }
-
-  /* Show nav links horizontally on desktop */
-  .navLinksContainer {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    padding: 0;
-    width: auto;
-    justify-self: end;
-    justify-content: flex-end;
-    gap: 0;
-  }
-
-  .navLink {
-    padding: 0.7rem 1.5rem;
-    font-size: 1rem;
-    margin: 0 0.2rem;
-  }
-
-  .navLink:hover {
-    transform: translateY(-3px);
-  }
-
-  .navLink::before {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-  }
-
-  .navLink:hover::before {
-    width: 80%;
-  }
-
-  .navLink.active::before {
-    width: 80%;
-  }
-
-  .navLink::after {
-    left: 8px;
-  }
-}
-
-/* Extra Large Screens - 1280px and up */
+/* Extra Large Screens */
 @media (min-width: 1280px) {
   .navbarContainer {
     padding: 1.2rem 4rem;
     max-width: 1400px;
     margin: 0 auto;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-  }
-
-  .logo {
-    height: 48px;
-  }
-
-  .navLinksContainer {
-    gap: 0.5rem;
   }
 
   .navLink {
     padding: 0.8rem 1.8rem;
     font-size: 1.1rem;
-    margin: 0 0.3rem;
   }
-}
-
-/* Ultra-wide screens - 1920px and up */
-@media (min-width: 1920px) {
-  .navbarContainer {
-    padding: 1.5rem 6rem;
-    max-width: 1600px;
-  }
-
-  .logo {
-    height: 52px;
-  }
-
-  .navLink {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-  }
-}
-
-/* Smooth transitions */
-.navbarContainer * {
-  transition: all 0.3s ease;
-}
-
-/* Focus states for accessibility */
-.navLink:focus,
-.mobileToggle:focus {
-  outline: 2px solid #2563eb;
-  outline-offset: 2px;
-}
-
-/* Dark mode focus outline */
-@media (prefers-color-scheme: dark) {
-  .navLink:focus,
-  .mobileToggle:focus {
-    outline: 2px solid #60a5fa;
-  }
-}
-
-/* Print styles */
-@media print {
-  .navbarContainer {
-    display: none;
-  }
-}
-
-/* Ensure proper spacing and alignment */
-.navLinksContainer {
-  align-items: stretch;
-}
-
-@media (min-width: 1024px) {
-  .navLinksContainer {
-    align-items: center;
-  }
-}
-
-/* Remove any default margins */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Dark mode class support (if you're using a class-based dark mode system) */
-.dark .navLink {
-  color: #ffffff;
-}
-
-.dark .navLink:hover {
-  color: #60a5fa;
-}
-
-.dark .navLink.active {
-  color: #60a5fa;
-}
-
-.dark .navLink::before {
-  background: linear-gradient(90deg, #60a5fa, #93c5fd);
-}
-
-.dark .navLink::after {
-  color: #60a5fa;
-}
-
-.dark .hamburgerLine {
-  background-color: #ffffff;
-}
-
-.dark .navLink:focus,
-.dark .mobileToggle:focus {
-  outline: 2px solid #60a5fa;
 }
