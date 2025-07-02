@@ -1,6 +1,4 @@
-/* NavBar.module.css */
 
-/* Base navbar container - NO BACKGROUND */
 .navbarContainer {
   display: flex;
   align-items: center;
@@ -10,7 +8,9 @@
   top: 0;
   z-index: 1000;
   transition: all 0.3s ease;
-  /* Removed background-color and box-shadow */
+  background-color: rgba(255, 255, 255, 0.95); 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); 
+  border-radius: 10px;
 }
 
 /* Logo Section */
@@ -506,5 +506,3 @@
 .dark .mobileToggle:focus {
   outline: 2px solid #60a5fa;
 }
-
-

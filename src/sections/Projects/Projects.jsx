@@ -1,11 +1,11 @@
 import styles from './ProjectsStyles.module.css';
 import viberr from '../../assets/viberr.png';
-import freshBurger from '../../assets/fresh-burger.png';
+import freshBurger from '../../assets/LOGO_remover.png';
 import hipsster from '../../assets/hipsster.png';
 import fitLift from '../../assets/fitlift.png';
 import ProjectCard from '../../common/ProjectCard';
 
-function Projects() {
+function Projects() { 
   return (
     <section id="projects" className={styles.container}>
       <h1 className="sectionTitle">Projects</h1>
@@ -18,7 +18,7 @@ function Projects() {
         />
         <ProjectCard
           src={freshBurger}
-          link="https://github.com/Ade-mir/company-landing-page-2"
+          link="https://freshcart-three-eta.vercel.app/"
           h3="Fresh Burger"
           p="Hamburger Restaurant"
         />
@@ -30,7 +30,7 @@ function Projects() {
         />
         <ProjectCard
           src={fitLift}
-          link="https://github.com/Ade-mir/company-landing-page-2"
+          link="https://fitness-app-phi.vercel.app/"
           h3="FitLift"
           p="Fitness App"
         />
