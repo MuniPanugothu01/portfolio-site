@@ -11,7 +11,8 @@ import linkedinLight from "../../assets/linkedin-light.svg";
 import linkedinDark from "../../assets/linkedin-dark.svg";
 import CV from "../../assets/cv.pdf";
 import { useTheme } from "../../common/ThemeContext";
-// import the components
+// import the components;
+import Experience from "../Experience/Experience";
 import Projects from "../Projects/Projects";
 import Skills from "../Skills/Skills";
 import Contact from "../Contact/Contact";
@@ -79,6 +80,7 @@ function Hero() {
           </a>
         </div>
       </section>
+      <Experience/>
       <Projects />
       <Skills />
       <Contact />
