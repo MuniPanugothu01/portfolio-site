@@ -1,5 +1,5 @@
 import React from "react";
-import certificateImage from '../../assets/Muni Panugothu-certificate.pdf'
+import certificateImage from '../../assets/Certificate.png'
 import "./Experience.css";
 
 const Experience = () => {
