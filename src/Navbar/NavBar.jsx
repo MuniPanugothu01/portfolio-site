@@ -85,7 +85,7 @@ const NavBar = () => {
           }`}
           onClick={handleLinkClick}
         >
-          About Me
+          Experience
         </Link>
         <Link
           to="/Project"
