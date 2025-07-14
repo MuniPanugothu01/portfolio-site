@@ -51,15 +51,19 @@
 }
 
 /* 📱 General Small Mobile Devices */
+/* 📱 General Mobile Devices */
+/* 📱 General Small Mobile Devices */
 @media (max-width: 600px) {
   .experience-card {
-    flex-direction: column; /* Stack image and text */
+    flex-direction: column; /* Stack image & text */
     text-align: center;
-    margin-top: 100px;
+    margin-top: 80px; /* 🆕 Push down to avoid overlap */
+    position: relative;
+    top: auto; /* 🆕 Reset any previous top value */
   }
 
   .certificate-image {
-    max-width: 100%;
+    max-width: 95%;
   }
 
   .experience-details h2 {
@@ -76,6 +80,8 @@
   .experience-card {
     flex-direction: column;
     text-align: center;
+    margin-top: 90px; /* 🆕 Extra spacing for iPhones */
+    top: auto; /* 🆕 Reset top value */
   }
   .certificate-image {
     max-width: 90%;
