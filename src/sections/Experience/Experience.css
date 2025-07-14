@@ -7,7 +7,9 @@
   --bg-color: #1e1e1e;
   --text-color: #fff;
 }
-
+*{
+  font-family: 'Times New Roman', Times, serif;
+}
 .experience-card {
   background-color: var(--bg-color);
   color: var(--text-color);
