@@ -79,9 +79,9 @@ const NavBar = () => {
           Home
         </Link>
         <Link
-          to="/About"
+          to="/Experience"
           className={`${styles.navLink} ${
-            isActiveLink("/About") ? styles.active : ""
+            isActiveLink("/Experience") ? styles.active : ""
           }`}
           onClick={handleLinkClick}
         >

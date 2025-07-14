@@ -5,6 +5,7 @@ import Hero from "./sections/Hero/Hero";
 import Projects from "./sections/Projects/Projects";
 import Skills from "./sections/Skills/Skills";
 import NavBar from "./Navbar/NavBar";
+import Experience from './sections/Experience/Experience'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<Hero />} />
+          <Route path="/Experience" element={<Experience />} />
           <Route path="/Project" element={<Projects />} />
           <Route path="/Skills" element={<Skills />} />
           <Route path="/Contact" element={<Contact />} />
