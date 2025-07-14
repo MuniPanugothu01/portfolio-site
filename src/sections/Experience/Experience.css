@@ -1,44 +1,3 @@
-/* :root {
-  --bg-color: #f5f5f5;
-  --text-color: #000;
-}
-
-[data-theme="dark"] {
-  --bg-color: #1e1e1e;
-  --text-color: #fff;
-}
-*{
-  font-family: 'Times New Roman', Times, serif;
-}
-.experience-card {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.certificate-image {
-  width: 100%;
-  max-width: 700px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.experience-details h2 {
-  margin-bottom: 15px;
-  font-size: 28px;
-}
-
-.experience-details p {
-  margin: 8px 0;
-  font-size: 16px;
-  line-height: 1.5;
-} */
 :root {
   --bg-color: #f5f5f5;
   --text-color: #000;
@@ -62,8 +21,8 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   max-width: 1000px;
   margin: 20px auto;
-  display: flex; /* Make side by side */
-  flex-direction: row; /* Default: image left, text right */
+  display: flex; /* Side by side default */
+  flex-direction: row;
   gap: 20px;
   align-items: center;
 }
@@ -73,11 +32,11 @@
   max-width: 400px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  flex: 1; /* Allow image to grow */
+  flex: 1;
 }
 
 .experience-details {
-  flex: 2; /* Allow text to take more space */
+  flex: 2;
 }
 
 .experience-details h2 {
@@ -91,21 +50,105 @@
   line-height: 1.5;
 }
 
-/* 📱 Small devices: stack vertically */
+/* 📱 General Small Mobile Devices */
 @media (max-width: 600px) {
   .experience-card {
-    flex-direction: column; /* Stack image on top of text */
+    flex-direction: column; /* Stack image and text */
     text-align: center;
+    margin-top: 100px;
   }
 
   .certificate-image {
     max-width: 100%;
   }
+
+  .experience-details h2 {
+    font-size: 22px;
+  }
+
+  .experience-details p {
+    font-size: 14px;
+  }
 }
 
-/* 🖥 Medium devices: slightly smaller image */
-@media (min-width: 601px) and (max-width: 1024px) {
+/* 🍎 Apple iPhone (SE, 12, 13, 14, Pro, Pro Max) */
+@media only screen and (min-device-width: 375px) and (max-device-width: 430px) and (-webkit-device-pixel-ratio: 3) {
+  .experience-card {
+    flex-direction: column;
+    text-align: center;
+  }
   .certificate-image {
-    max-width: 300px;
+    max-width: 90%;
+  }
+}
+
+/* 🍎 iPad Mini (8.3" - 2266x1488) & iPad Air 4 (10.9" - 2360x1640) */
+@media screen and (max-width: 834px) and (orientation: portrait) {
+  .experience-card {
+    flex-direction: column;
+    position: relative; /* Needed for top to work */
+    top: -90px; /* Move up 40px */
+  }
+  .certificate-image {
+    max-width: 80%;
+  }
+  .experience-details {
+    text-align: center;
+  }
+}
+
+/* 🍎 iPad Air 4 (Portrait + Landscape) */
+@media only screen and (min-device-width: 820px) and (max-device-width: 1180px) and (-webkit-min-device-pixel-ratio: 2) {
+  .experience-card {
+    position: relative;
+    top: -20px; /* ⬆️ Moves up slightly for both orientations */
+    gap: 20px;
+  }
+
+  .certificate-image {
+    max-width: 85%;
+    margin-bottom: 15px;
+  }
+
+  .experience-details {
+    text-align: center;
+  }
+
+  /* 📱 Portrait specific styles */
+  @media (orientation: portrait) {
+    .experience-card {
+      flex-direction: column; /* Stack image on top */
+    }
+  }
+
+  /* 💻 Landscape specific styles */
+  @media (orientation: landscape) {
+    .experience-card {
+      flex-direction: row; /* Side by side */
+      gap: 30px;
+    }
+    .certificate-image {
+      max-width: 400px;
+    }
+  }
+}
+
+/* 📱 Samsung Galaxy Tab S7 (11" - 2560x1600) */
+@media only screen and (min-device-width: 800px) and (max-device-width: 1280px) {
+  .experience-card {
+    flex-direction: row;
+  }
+  .certificate-image {
+    max-width: 350px;
+  }
+}
+
+/* 📱 Microsoft Surface Duo (5.6" dual-screen, 2700x1800 unfolded) */
+@media only screen and (min-device-width: 540px) and (max-device-width: 720px) and (orientation: portrait) {
+  .experience-card {
+    flex-direction: column;
+  }
+  .certificate-image {
+    max-width: 95%;
   }
 }
